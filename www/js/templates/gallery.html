@@ -1,0 +1,26 @@
+<div ng-controller="PhotoController as pc">
+    <div id="picture-gallery">
+        <div class="picture-container" ng-repeat="photo in photos" id="{{photo.key}}">
+            <img ng-src="{{ pc.makeImageUrl(photo.value) }}" style="margin-left: -128px"/>
+            <a id="{{photo.key + '-delete'}}" class="delete-image" ng-click="pc._removePicture(photo.key)">X</a>
+        </div>
+    </div>
+    <p id="camera-error">{{messageErreur}}</p>
+    <div id="sharedForm" ng-controller="TestCaseController as tcc">
+        <input id="test-case-id" type="hidden" ng-model="testCase.id">
+        <input id="test-case-nom" type="text" ng-model="testCase.nom">
+        <input id="test-case-description" type="text" ng-model="testCase.description">
+        <input id="test-case-numero" type="number" ng-model="testCase.numero">
+        <input id="test-case-date" type="date" ng-model="testCase.date">
+        <input id="test-case-timestamp" type="hidden" ng-model="testCase.timestamp">
+        <button id="test-case-btn" ng-click="tcc.update()">Mettre à jour</button>
+    </div>
+    <div id="camera-buttons">
+        <button id="select-image-btn" ng-click="pc.selectImg()"><img src="img/photo-library.svg"
+                                                                     title="Sélectionner une image"/></button>
+        <button id="take-image-btn" ng-click="pc.takePicture()"><img src="img/take-picture.svg"
+                                                                     title="Prendre une photo"/></button>
+
+        <button id="disconnect-btn" ng-click="pc.userDisconnect()">Se déconnecter</button>
+    </div>
+</div>

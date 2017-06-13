@@ -1,0 +1,17 @@
+{
+  "name": "camera-poc-angular",
+  "version": "1.0.0",
+  "description": "",
+  "main": "js/index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "karma start karma.conf.js"
+  },
+  "author": "Gaël PHILIPPE",
+  "license": "ISC",
+  "devDependencies": {
+    "jasmine-core": "^2.6.2"
+  }
+}
